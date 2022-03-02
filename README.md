@@ -1,6 +1,6 @@
-# Project Name
+# Juicy Match 3 Project
 
-Juice Match 3 Project
+
 
 A project in Godot utilizing juicy features on a template match 3 game.
 
