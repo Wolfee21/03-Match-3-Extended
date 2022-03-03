@@ -379,6 +379,7 @@ func destroy_matched():
 	else:
 		swap_back()
 	current_matches.clear()
+	
 
 func make_effect(effect, column, row):
 	var current = effect.instance()
@@ -441,6 +442,7 @@ func refill_columns():
 				all_pieces[i][j] = piece
 				all_pieces[i][j].grid = Vector2(i,j)
 	after_refill()
+	
 
 func after_refill():
 	for i in width:
@@ -690,6 +692,7 @@ func _on_bottom_ui_booster(booster_type):
 
 func _on_Game_game_lost():
 	state = wait
+	$MusicGameOver.play()
 
 func _on_Game_game_won():
 	state = wait
@@ -704,6 +707,7 @@ func _on_Game_set_dimensions(new_width, new_height):
 	height = new_height
 
 func _on_RefillTimer_timeout():
+	
 	refill_columns()
 
 func _on_CollapseTimer_timeout():

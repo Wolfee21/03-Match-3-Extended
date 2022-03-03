@@ -1,37 +1,65 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://UI/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Asset/Bullpen3D.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Asset/Blue.png" type="Texture" id=3]
+[ext_resource path="res://Asset/Red.png" type="Texture" id=4]
+[ext_resource path="res://Asset/Orange.png" type="Texture" id=5]
+[ext_resource path="res://Asset/Green.png" type="Texture" id=6]
+[ext_resource path="res://Asset/Spark.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 39
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 26
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 2 )
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -3.0
+margin_right = 1.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Background" type="ColorRect" parent="."]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 566.0
-margin_bottom = 482.0
-color = Color( 0, 0, 0, 0.501961 )
+margin_left = 5.0
+margin_top = 1.0
+margin_right = 583.0
+margin_bottom = 1028.0
+color = Color( 1, 0, 0, 0.501961 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="."]
-margin_right = 576.0
-margin_bottom = 512.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 577.0
+margin_bottom = 513.0
+custom_fonts/font = SubResource( 1 )
 text = "Welcome to Match-3"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
 
 [node name="Play" type="Button" parent="."]
 margin_left = 238.0
 margin_top = 512.0
 margin_right = 338.0
 margin_bottom = 552.0
+custom_fonts/font = SubResource( 2 )
 text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -42,7 +70,243 @@ margin_left = 238.0
 margin_top = 562.0
 margin_right = 338.0
 margin_bottom = 602.0
+custom_fonts/font = SubResource( 3 )
 text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Blue" type="Sprite" parent="."]
+position = Vector2( 55, 195 )
+rotation = 0.328122
+texture = ExtResource( 3 )
+
+[node name="Blue2" type="Sprite" parent="."]
+position = Vector2( 197, 335 )
+rotation = 0.328122
+texture = ExtResource( 3 )
+
+[node name="Blue5" type="Sprite" parent="."]
+position = Vector2( 303, 717 )
+rotation = 0.328122
+texture = ExtResource( 3 )
+
+[node name="Blue8" type="Sprite" parent="."]
+position = Vector2( 70, 938 )
+rotation = 0.328122
+texture = ExtResource( 3 )
+
+[node name="Blue7" type="Sprite" parent="."]
+position = Vector2( 183, 831 )
+rotation = 0.328122
+texture = ExtResource( 3 )
+
+[node name="Blue6" type="Sprite" parent="."]
+position = Vector2( 468, 703 )
+rotation = 0.328122
+texture = ExtResource( 3 )
+
+[node name="Blue4" type="Sprite" parent="."]
+position = Vector2( 248, 191 )
+rotation = 0.328122
+texture = ExtResource( 3 )
+
+[node name="Blue3" type="Sprite" parent="."]
+position = Vector2( 478, 411 )
+rotation = 0.328122
+texture = ExtResource( 3 )
+
+[node name="Red" type="Sprite" parent="."]
+position = Vector2( 150, 127 )
+rotation = 0.764454
+texture = ExtResource( 4 )
+
+[node name="Red2" type="Sprite" parent="."]
+position = Vector2( 88, 422 )
+rotation = 0.764454
+texture = ExtResource( 4 )
+
+[node name="Red5" type="Sprite" parent="."]
+position = Vector2( 83, 778 )
+rotation = 0.764454
+texture = ExtResource( 4 )
+
+[node name="Red8" type="Sprite" parent="."]
+position = Vector2( 230, 933 )
+rotation = 0.764454
+texture = ExtResource( 4 )
+
+[node name="Red7" type="Sprite" parent="."]
+position = Vector2( 380, 585 )
+rotation = 0.764454
+texture = ExtResource( 4 )
+
+[node name="Red6" type="Sprite" parent="."]
+position = Vector2( 196, 589 )
+rotation = 0.764454
+texture = ExtResource( 4 )
+
+[node name="Red4" type="Sprite" parent="."]
+position = Vector2( 377, 344 )
+rotation = 0.764454
+texture = ExtResource( 4 )
+
+[node name="Red3" type="Sprite" parent="."]
+position = Vector2( 517, 58 )
+rotation = 0.764454
+texture = ExtResource( 4 )
+
+[node name="Orange" type="Sprite" parent="."]
+position = Vector2( 67, 54 )
+rotation = -0.656244
+texture = ExtResource( 5 )
+
+[node name="Orange2" type="Sprite" parent="."]
+position = Vector2( 263, 434 )
+rotation = -0.656244
+texture = ExtResource( 5 )
+
+[node name="Orange5" type="Sprite" parent="."]
+position = Vector2( 488, 930 )
+rotation = -0.656244
+texture = ExtResource( 5 )
+
+[node name="Orange7" type="Sprite" parent="."]
+position = Vector2( 326, 809 )
+rotation = -0.656244
+texture = ExtResource( 5 )
+
+[node name="Orange6" type="Sprite" parent="."]
+position = Vector2( 503, 578 )
+rotation = -0.656244
+texture = ExtResource( 5 )
+
+[node name="Orange4" type="Sprite" parent="."]
+position = Vector2( 258, 76 )
+rotation = -0.656244
+texture = ExtResource( 5 )
+
+[node name="Orange3" type="Sprite" parent="."]
+position = Vector2( 360, 177 )
+rotation = -0.656244
+texture = ExtResource( 5 )
+
+[node name="Green" type="Sprite" parent="."]
+position = Vector2( 438, 107 )
+rotation = -0.764454
+texture = ExtResource( 6 )
+
+[node name="Green2" type="Sprite" parent="."]
+position = Vector2( 57, 324 )
+rotation = -0.764454
+texture = ExtResource( 6 )
+
+[node name="Green4" type="Sprite" parent="."]
+position = Vector2( 128, 684 )
+rotation = -0.764454
+texture = ExtResource( 6 )
+
+[node name="Green9" type="Sprite" parent="."]
+position = Vector2( 455, 800 )
+rotation = 1.18607
+texture = ExtResource( 6 )
+
+[node name="Green8" type="Sprite" parent="."]
+position = Vector2( 385, 926 )
+rotation = -0.764454
+texture = ExtResource( 6 )
+
+[node name="Green7" type="Sprite" parent="."]
+position = Vector2( 68, 554 )
+rotation = -0.764454
+texture = ExtResource( 6 )
+
+[node name="Green6" type="Sprite" parent="."]
+position = Vector2( 380, 531 )
+rotation = -0.764454
+texture = ExtResource( 6 )
+
+[node name="Green5" type="Sprite" parent="."]
+position = Vector2( 195, 533 )
+rotation = -0.764454
+texture = ExtResource( 6 )
+
+[node name="Green3" type="Sprite" parent="."]
+position = Vector2( 528, 320 )
+rotation = -0.764454
+texture = ExtResource( 6 )
+
+[node name="Green10" type="Sprite" parent="."]
+position = Vector2( 80, 122 )
+rotation = -0.764454
+scale = Vector2( 2.23453, 2.12432 )
+texture = ExtResource( 7 )
+
+[node name="Green11" type="Sprite" parent="."]
+position = Vector2( 310, 114 )
+rotation = -0.764454
+scale = Vector2( 2.23453, 2.12432 )
+texture = ExtResource( 7 )
+
+[node name="Green12" type="Sprite" parent="."]
+position = Vector2( 498, 163 )
+rotation = -0.764454
+scale = Vector2( 2.23453, 2.12432 )
+texture = ExtResource( 7 )
+
+[node name="Green13" type="Sprite" parent="."]
+position = Vector2( 134, 351 )
+rotation = -0.764454
+scale = Vector2( 2.23453, 2.12432 )
+texture = ExtResource( 7 )
+
+[node name="Green14" type="Sprite" parent="."]
+position = Vector2( 306, 349 )
+rotation = -0.764454
+scale = Vector2( 2.23453, 2.12432 )
+texture = ExtResource( 7 )
+
+[node name="Green15" type="Sprite" parent="."]
+position = Vector2( 78, 863 )
+rotation = -0.764454
+scale = Vector2( 2.00589, 1.89846 )
+texture = ExtResource( 7 )
+
+[node name="Green16" type="Sprite" parent="."]
+position = Vector2( 277, 857 )
+rotation = -0.764454
+scale = Vector2( 2.00589, 1.89846 )
+texture = ExtResource( 7 )
+
+[node name="Green17" type="Sprite" parent="."]
+position = Vector2( 197, 724 )
+rotation = -0.764454
+scale = Vector2( 2.00589, 1.89846 )
+texture = ExtResource( 7 )
+
+[node name="Green18" type="Sprite" parent="."]
+position = Vector2( 416, 468 )
+rotation = -0.764454
+scale = Vector2( 2.00589, 1.89846 )
+texture = ExtResource( 7 )
+
+[node name="Green21" type="Sprite" parent="."]
+position = Vector2( 446, 639 )
+rotation = -0.764454
+scale = Vector2( 2.00589, 1.89846 )
+texture = ExtResource( 7 )
+
+[node name="Green19" type="Sprite" parent="."]
+position = Vector2( 172, 451 )
+rotation = -0.764454
+scale = Vector2( 2.00589, 1.89846 )
+texture = ExtResource( 7 )
+
+[node name="Green20" type="Sprite" parent="."]
+position = Vector2( 81.9999, 619 )
+rotation = -0.764454
+scale = Vector2( 2.00589, 1.89846 )
+texture = ExtResource( 7 )
 
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]

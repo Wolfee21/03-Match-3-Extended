@@ -1,7 +1,8 @@
 extends Node2D
 
 export (String) var piece
-
+export var wiggle_amount = 1
+var Effects = null
 var matched
 var is_counted
 var is_column_bomb = false
@@ -13,7 +14,7 @@ var target_position = Vector2(0,0)
 var default_modulate = Color(1,1,1,1)
 var highlight = Color(1,0.8,0,1)
 var grid = Vector2.ZERO
-
+var Explosion = preload("res://Explosion/Explosion.tscn")
 var default_z = z_index
 const max_z = 4095
 
@@ -22,8 +23,16 @@ var dying = false
 func _ready():
 	default_modulate = modulate
 	target_position = position
+	if dying:
+			get_parent().remove_child(self)
+			Effects.add_child(self)
+			$Timer.wait_time = 0.5 + (randf() / 10.0)
+			$Timer.start()
+			$Falling.emitting = true
 
 func _physics_process(_delta):
+	$Select.texture = $Sprite.texture
+	$Select.scale = $Sprite.scale
 	if dying:
 		queue_free()
 	if selected:
@@ -31,6 +40,8 @@ func _physics_process(_delta):
 			z_index = max_z
 			target_position = position
 		global_position = constrain(Vector2(get_global_mouse_position().x, get_global_mouse_position().y))
+		$Select.show()
+		$Selected.emitting = true
 		if modulate != highlight:
 			modulate = highlight
 	else:
@@ -39,11 +50,15 @@ func _physics_process(_delta):
 			position = target_position		
 		if modulate != default_modulate:
 			modulate = default_modulate
+		$Select.hide()
+		$Selected.emitting = false
+
 		
 
 func move(change):
 	target_position = change
 	position = target_position
+	
 
 func dim():
 	pass
@@ -64,7 +79,6 @@ func make_color_bomb():
 func die():
 	dying = true
 	Global.update_goals(piece)
-
 
 func constrain(xy):
 	var Grid = get_node_or_null("/root/Game/Grid")
@@ -91,3 +105,12 @@ func constrain(xy):
 			var max_x = Grid.grid_to_pixel(clamp(grid.x+1,grid.x,Grid.width-1), grid.y)
 			temp.x = clamp(temp.x,min_x.x,max_x.x)
 		return temp
+
+func _on_Timer_timeout():
+	if Effects == null:
+		Effects = get_node_or_null("/root/Game/Effects")
+	if Effects != null:
+		var explosion = Explosion.instance()
+		explosion.position = position
+		Effects.add_child(explosion)
+	dying = true;
